@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package job;
+
+option go_package = "github.com/arybolovlev/protobuf-sandbox/proto/job";
+
+message JobRequest {
+      string name = 1;
+}
+
+message JobResponse {
+      string id   = 1;
+      string name = 2;
+}
+
+service Job {
+      rpc Create(JobRequest) returns (JobResponse);
+}
