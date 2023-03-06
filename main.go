@@ -16,6 +16,8 @@ func main() {
 	// Client options
 	var cli bool
 	flag.BoolVar(&cli, "client", false, "Run in the client mode")
+	var file string
+	flag.StringVar(&file, "file", "", "Specification file")
 
 	flag.Parse()
 
@@ -26,6 +28,6 @@ func main() {
 
 	if cli {
 		log.Println("Running Client")
-		client.Run()
+		client.Run(file)
 	}
 }
